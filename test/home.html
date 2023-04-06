@@ -1,151 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ONLINE MOVERS COMPANY</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-
-
-
-<body>
-  <div class="container">
-    <div class="full-page">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masterbest Movers Company</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
       <div class="navbar">
-        <div>
-          <h1>WELCOME TO MASTERBEST MOVERS COMPANY</h1>
-          <div>
-          </div>
-      
-          
-          
-          <nav>
-            <ul id='MenuItem'>
-              <li><a href='#'></a></li>
-              <li><a href='about.html'>About</a></li>
-              <li><a href='service.html'>Service</a></li>
-              <li><a href='contact.html'>Contact</a></li>
-              <li><a href='login.html'>login</a></li>
-              
-              
-              </li>
-            </ul>
+        <div class="logo">
+          <h1>Masterbest Movers </h1>
         </div>
-
+        <nav class="menu">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </nav>
-        </header>
+        <div class="auth-buttons">
+          <button id="loginBtn" onclick="redirectToLogin()">Log in</button>
+          <button id="signupBtn" onclick="redirectToSignup()">Sign up</button>
+          <div id="avatar" class="hidden"></div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="slideshow-container">
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bW92ZXJzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Moving truck with Masterbest Movers Company logo">
+          <div class="caption">Experience Hassle-Free Relocation</div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1614359835514-92f8ba196357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW92ZXJzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Cat on a couch in a newly moved home">
+          <div class="caption">Let Us Handle Your Home Move</div>
+        </div>
+        <div class="slide">
+          <img src="https://plus.unsplash.com/premium_photo-1663054218741-a3cada11f993?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVsb2NhdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="Office building with Masterbest Movers Company logo">
+          <div class="caption">Relocate Your Business with Ease</div>
+        </div>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+      </div>
+      <br>
 
-        <main>
+      <article class="services">
+        <h2>Our Services</h2>
+        <ul>
+          <li>Household Moving: We provide comprehensive moving services for your household items, ensuring a hassle-free and safe relocation.</li>
+          <li>Office Moving: Our team of experts can handle the relocation of your office, ensuring minimal downtime and disruption to your business operations.</li>
+          <li>Staff Relocations: We can help your employees with their relocation needs, ensuring a smooth transition to their new home.</li>
+          <li>Storage: We offer safe and secure storage solutions for your belongings during the moving process.</li>
+          <li>Cleaning: Our cleaning services can help you ensure a clean and organized home or office after the move.</li>
+        </ul>
+        <p>Contact us to learn more about our services and get a free quote.</p>
+        <a href="contact.html"><button>Contact Us</button></a>
+      </article>
 
-        
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs3ZJJebX0-cOUK__4kkEli_Sp7X0b_o4DFQ&usqp=CAU"
-          width="1500" height="300">
-  
-       
-            
-            <div class="services">
-              <h2>WOULD YOU LIKE TO KNOW MORE ABOUT OUR SERVICES</h2>
-              <p>We are always waiting with pleasure to hear from you</p>
-              <a href="contact.html"><button>CONTACT US</button></a>
-            </div>
-            
-          
-         
-          <div style="border: 1px solid rgb(80, 78, 84); padding: 9px; background-color: rgb(125, 132, 130);">
-            
-         
-            <div style="display: flex; justify-content: space-around;">
-              <h2>CLIENT TESTIMONIES</h2>
-          <div style="text-align: left;">
-            <div class="testimonial">
-              <p>"I am extremely satisfied with the services provided. The team was professional"</p>
-              <cite>purity koech</cite>
-            </div>
+      <aside class="testimonials">
+        <h2>Client Testimonials</h2>
+        <div class="testimonial">
+          <p>"I am extremely satisfied with the services provided. The team was professional."</p>
+          <cite>Purity Koech</cite>
+        </div>
+        <div class="testimonial">
+          <p>"It was a stress-free relocation. I moved my items to South Africa with Masterbest and I assure you it's the best company."</p>
+          <cite>Cate Smith</cite>
+        </div>
+        <div class="testimonial">
+          <p>"The company is a 10/10."</p>
+          <cite>Ferdano Puth</cite>
+        </div>
+      </aside>
 
-            <div class="testimonial">
-              <p>"It was a stree free relocation i moved my items to South Africa with Masterbest and i assure you its
-                the best company."</p>
-              <cite>Cate Smith</cite>
-            </div>
-            <div class="testimonial">
-              <p>"The company is a 10/10."</p>
-              <cite>Ferdano puth</cite>
-            </div>
-            
-     </div>
-     <h3>  QUOTE</h3>
-    
-     <div style="background-color: rgb(138, 130, 133); padding: 5px;">
-          <div style="text-align: right;">
-          <div class="quote">
-              <p>Like where you move to with masterbest company.
-                  <q> lets all move to new homes. with masterbest movers we guarantess a stress free movement</q>
-               </p>
-               <cite>masterbestmovers company</cite>
-               </div>
-              
-            </main>
-        
-           
-              
-              
-              <div class="services">
-                <h2>Our Services</h2>
-                <ul>
-                  <li>Household Moving</li>
-                  <li>Office Moving</li>
-                  <li> Staff Relocations</li>
-                  <li>Storage</li>
-                  <li>Cleaning</li>
-                </ul>
-             
-              
-              <div class="quick-links">
-                <h2>Quick Links</h2>
-                <ul>
-                  <li><a href="about.html">About</a></li>
-                  <li><a href="service.html"> Services</a></li>
-                  <li><a href="contact.html">Contacts</a></li>
-                </ul>
-              
-              
-              <div class="hours">
-                <h2>Business Hours</h2>
-                <p>Monday - Friday: 8:00 am - 8:00 pm</p>
-                <p>Saturday - Sunday: 8:00 am -  12 noon</p>
-              
-              
-              <div class="service-message">
-                <p>We are at your service!</p>
-                <p>Available 24/7</p>
-              </div>
-            </div>
-            
-</body>
-<div style="text-align: left;">
-  <div style="color: rgb(68, 34, 159);">
-<link rel="stylesheet" href="style.css">
-<li> <a href="https://www.facebook.com/masterbestmovers" target="_blank">
-    <img src="path/to/facebook-icon.png" alt="Facebook">
-  </a>
-  <a href="https://www.instagram.com/masterbestmovers" target="_blank">
-    <img src="path/to/instagram-icon.png" alt="instagram">
-  </a>
-  <a href="https://www.twitter.com/masterbestmovers" target="_blank">
-    <img src="path/to/twitter-icon.png" alt="twitter">
-  </a>
-  <div>
-    <form>
-      
-      <footer>
+      <blockquote class="quote">
+        <p>Move to a new home with confidence using Masterbest Movers.</p>
+        <q>We guarantee a stress-free moving experience.</q>
+        <cite>Masterbest Movers Company</cite>
+      </blockquote>
+    </main>
 
+    <div class="social-media">
+      <a href="https://www.facebook.com/masterbestmovers" target="_blank"><img src="https://img.icons8.com/dusk/50/000000/facebook.png" alt="Facebook"></a>
+      <a href="https://www.instagram.com/masterbestmovers" target="_blank"><img src="https://img.icons8.com/dusk/50/000000/instagram.png" alt="Instagram"></a>
+      <a href="https://www.twitter.com/masterbestmovers" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMsEQyB67nWtTZhXQspaxVxRkSDdqPU28vEoKVgdg&s" alt="Twitter"></a>
+    </div>
+
+    <footer>
+      <div class="footer">
         <p>&copy; 2023 Masterbest Movers Company. All rights reserved.</p>
-      </footer>
-    </form>
-  </div>
+      </div>
+    </footer>
+    <script src="slideshow.js"></script>
+    <script src="main.js"></script>
 
-  </div>
-
+  </body>
 </html>
