@@ -5,10 +5,9 @@ header("Access-Control-Allow-Methods: GET");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    try {
-        $db = new PDO("sqlite:your_database_name.db");
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    require_once 'config.php';
 
+    try {
         $stmt = $db->query("SELECT * FROM inquiries");
         $inquiries = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

@@ -1,22 +1,13 @@
 <?php
-class Database {
-    private $db;
+$db_host = 'localhost';
+$db_name = 'your_database_name';
+$db_user = 'your_database_user';
+$db_password = 'your_database_password';
 
-    public function __construct() {
-        $this->connect();
-    }
-
-    private function connect() {
-        try {
-            $this->db = new PDO('sqlite:backend/db.sqlite3');
-            $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            echo "Connection failed: " . $e->getMessage();
-        }
-    }
-
-    public function getDb() {
-        return $this->db;
-    }
+try {
+    $db = new PDO("mysql:host=$db_host;dbname=$db_name;charset=utf8", $db_user, $db_password);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
 }
 ?>

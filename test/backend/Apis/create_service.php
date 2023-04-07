@@ -1,4 +1,6 @@
 <?php
+require_once 'config.php';
+
 header("Content-Type: application/json");
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
@@ -9,9 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $description = $_POST["description"];
 
     try {
-        $db = new PDO("sqlite:your_database_name.db");
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
         $stmt = $db->prepare("INSERT INTO services (name, description) VALUES (:name, :description)");
         $stmt->bindParam(":name", $name);
         $stmt->bindParam(":description", $description);

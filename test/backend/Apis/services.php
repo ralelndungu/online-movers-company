@@ -3,9 +3,6 @@ require_once '../config.php';
 
 header('Content-Type: application/json');
 
-$db = new Database();
-$conn = $db->getDb();
-
 try {
     $stmt = $conn->prepare("SELECT * FROM services");
     $stmt->execute();
@@ -14,3 +11,4 @@ try {
 } catch (PDOException $e) {
     echo json_encode(["error" => $e->getMessage()]);
 }
+?>

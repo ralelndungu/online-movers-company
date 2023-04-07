@@ -11,13 +11,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    $db = new Database();
-    $conn = $db->getDb();
-
     try {
-        $stmt = $conn->prepare("INSERT INTO users (username, password, email) VALUES (:username, :password, :email)");
+        $stmt = $db->prepare("INSERT INTO users (username, password, email) VALUES (:username, :password, :email)");
         $stmt->bindParam(':username', $username);
-        $stmt->bindParam(':password', password_hash($password, PASSWORD_DEFAULT));
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $stmt->bindParam(':password', $hashedPassword);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
 
