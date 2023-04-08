@@ -13,8 +13,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
+    $db = new Database();
+    $conn = $db->getDb();
+
     try {
-        $stmt = $db->prepare("INSERT INTO inquiries (name, email, message) VALUES (:name, :email, :message)");
+        $stmt = $conn->prepare("INSERT INTO inquiries (name, email, message) VALUES (:name, :email, :message)");
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':message', $message);
@@ -25,4 +28,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo json_encode(["error" => $e->getMessage()]);
     }
 }
-?>

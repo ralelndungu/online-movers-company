@@ -10,8 +10,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $testimonial = $_POST["testimonial"];
 
+    $db = new Database();
+    $conn = $db->getDb();
+
     try {
-        $stmt = $db->prepare("INSERT INTO testimonials (name, testimonial) VALUES (:name, :testimonial)");
+        $stmt = $conn->prepare("INSERT INTO testimonials (name, testimonial) VALUES (:name, :testimonial)");
         $stmt->bindParam(":name", $name);
         $stmt->bindParam(":testimonial", $testimonial);
         $stmt->execute();

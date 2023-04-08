@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   async function addService(formData) {
     try {
-      const response = await fetch("create_service.php", {
+      const response = await fetch("backend/api/create_service.php", {
         method: "POST",
         body: formData,
       });
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   async function addTestimonial(formData) {
     try {
-      const response = await fetch("create_testimonial.php", {
+      const response = await fetch("backend/api/create_testimonial.php", {
         method: "POST",
         body: formData,
       });
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   async function getInquiries() {
     try {
-      const response = await fetch("get_inquiries.php");
+      const response = await fetch("backend/api/get_inquiries.php");
   
       if (response.ok) {
         const inquiries = await response.json();

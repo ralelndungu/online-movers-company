@@ -8,7 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     require_once 'config.php';
 
     try {
-        $stmt = $db->query("SELECT * FROM inquiries");
+        $conn = $db->getDb(); // Get the PDO instance
+        $stmt = $conn->query("SELECT * FROM inquiries"); // Use the query() method on the PDO instance
         $inquiries = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         echo json_encode($inquiries);

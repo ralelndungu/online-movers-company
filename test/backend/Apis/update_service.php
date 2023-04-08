@@ -11,8 +11,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $description = $_POST["description"];
 
+    $db = new Database();
+    $conn = $db->getDb();
+
     try {
-        $stmt = $db->prepare("UPDATE services SET name = :name, description = :description WHERE id = :id");
+        $stmt = $conn->prepare("UPDATE services SET name = :name, description = :description WHERE id = :id");
         $stmt->bindParam(":id", $id);
         $stmt->bindParam(":name", $name);
         $stmt->bindParam(":description", $description);

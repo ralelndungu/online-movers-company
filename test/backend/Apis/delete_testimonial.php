@@ -4,14 +4,16 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-require_once 'config.php'; // Add this line
+require_once 'config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST["id"];
 
-    try {
+    $db = new Database(); // Add this line
+    $conn = $db->getDb(); // Add this line
 
-        $stmt = $db->prepare("DELETE FROM testimonials WHERE id = :id");
+    try {
+        $stmt = $conn->prepare("DELETE FROM testimonials WHERE id = :id");
         $stmt->bindParam(":id", $id);
         $stmt->execute();
 

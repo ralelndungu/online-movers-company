@@ -10,8 +10,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $description = $_POST["description"];
 
+    $db = new Database();
+    $conn = $db->getDb();
+
     try {
-        $stmt = $db->prepare("INSERT INTO services (name, description) VALUES (:name, :description)");
+        $stmt = $conn->prepare("INSERT INTO services (name, description) VALUES (:name, :description)");
         $stmt->bindParam(":name", $name);
         $stmt->bindParam(":description", $description);
         $stmt->execute();
@@ -24,4 +27,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     http_response_code(405);
     echo json_encode(["message" => "Method not allowed."]);
 }
+
 ?>

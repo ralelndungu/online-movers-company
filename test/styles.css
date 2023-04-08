@@ -497,13 +497,46 @@ footer {
     background-color: #555;
 }
 
+.login-box {
+  border: 3px solid #555;
+  padding: 40px;
+  width: 300px;
+  margin: auto;
+  bottom: 60px;
+}
 
-/* Auth form styles */
-.auth-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
+h1 {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  display: block;
+  margin: auto;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #445fd8;
 }
 /* Back arrow styles */
 .back-arrow {
@@ -518,50 +551,51 @@ footer {
 .back-arrow:hover {
   color: #3498db;
 }
-.auth-form h2 {
-  margin-bottom: 1rem;
+.signup-box{
+  border: 3px solid #555;
+  padding: 30px;
+  width: 300px;
+  margin: auto;
+}
+
+h2 {
   text-align: center;
 }
 
-.auth-form label {
+label {
   display: block;
-  font-size: 1rem;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-  margin-top: 1.5rem;
+  margin-bottom: 10px;
 }
 
-.auth-form input {
+input[type=text], input[type=email], input[type=password] {
   width: 100%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ffffff;
-  border-radius: 0.5rem;
-  background-color: #333333;
-  color: #ffffff;
-  box-sizing: border-box;
-}
-.auth-form input:focus {
-  outline: none;
-  border-color: #3498db;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.auth-form button {
-  display: block;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-.auth-form button:hover {
-  background-color: #2980b9;
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
 }
 
-.auth-form .form-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #ffffff;
-  margin-top: 1rem;
+input[type=submit]:hover {
+  background-color: #45a049;
 }
-.auth-form .form-footer a:hover {
-  text-decoration: underline;
+
+.forgot-password {
+  font-size: 16px;
+  color: #000;
 }
+
+
+    
+
+

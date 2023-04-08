@@ -1,13 +1,26 @@
 <?php
-$db_host = 'localhost';
-$db_name = 'your_database_name';
-$db_user = 'your_database_user';
-$db_password = 'your_database_password';
 
-try {
-    $db = new PDO("mysql:host=$db_host;dbname=$db_name;charset=utf8", $db_user, $db_password);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
+class Database
+{
+    private $host = "localhost";
+    private $dbname = "your_database_name";
+    private $username = "your_username";
+    private $password = "your_password";
+    private $conn;
+
+    public function getDb()
+    {
+        try {
+            $this->conn = new PDO("mysql:host={$this->host};dbname={$this->dbname}", $this->username, $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            echo "Connection failed: " . $e->getMessage();
+        }
+
+        return $this->conn;
+    }
 }
+
+$db = new Database();
+$db->getDb();
 ?>

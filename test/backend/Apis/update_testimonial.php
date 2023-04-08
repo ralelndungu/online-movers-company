@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $testimonial = $_POST["testimonial"];
 
     try {
-        $stmt = $db->prepare("UPDATE testimonials SET name = :name, content = :testimonial WHERE id = :id");
+        $stmt = $db->getDb()->prepare("UPDATE testimonials SET name = :name, content = :testimonial WHERE id = :id");
         $stmt->bindParam(":id", $id);
         $stmt->bindParam(":name", $name);
         $stmt->bindParam(":testimonial", $testimonial);

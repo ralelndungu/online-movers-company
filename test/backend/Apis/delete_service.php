@@ -9,8 +9,11 @@ require_once 'config.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST["id"];
 
+    $db = new Database();
+    $conn = $db->getDb();
+
     try {
-        $stmt = $db->prepare("DELETE FROM services WHERE id = :id");
+        $stmt = $conn->prepare("DELETE FROM services WHERE id = :id");
         $stmt->bindParam(":id", $id);
         $stmt->execute();
 
