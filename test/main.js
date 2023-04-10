@@ -6,60 +6,19 @@ function redirectToLogin() {
   function redirectToSignup() {
     window.location.href = "signup.html";
   }
-  fetchServices();
-  fetchTestimonials();
+  document.addEventListener("DOMContentLoaded", function () {
+    // Fetch user's name from PHP session
+    fetch("get_user_name.php")
+      .then((response) => response.text())
+      .then((name) => {
+        const userNameElement = document.getElementById("user-name");
+        const userAvatarElement = document.getElementById("user-avatar");
   
-  function fetchServices() {
-      fetch("backend/api/services.php")
-          .then((response) => response.json())
-          .then((services) => {
-              // Render services in the services section
-          })
-          .catch((error) => console.error("Error fetching services:", error));
-  }
+        // Set user's name in the HTML
+        userNameElement.textContent = name;
   
-  function fetchTestimonials() {
-      fetch("backend/api/testimonials.php")
-          .then((response) => response.json())
-          .then((testimonials) => {
-              // Render testimonials in the testimonials section
-          })
-          .catch((error) => console.error("Error fetching testimonials:", error));
-  }
-  function registerUser(userData) {
-    fetch("backend/api/register.php", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-    })
-    .then((response) => response.json())
-    .then((data) => {
-        if (data.success) {
-            // Registration successful
-        } else {
-            // Handle registration error
-        }
-    })
-    .catch((error) => console.error("Error registering user:", error));
-}
-
-function loginUser(userData) {
-    fetch("backend/api/login.php", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-    })
-    .then((response) => response.json())
-    .then((data) => {
-        if (data.success) {
-            // Login successful
-        } else {
-            // Handle login error
-        }
-    })
-    .catch((error) => console.error("Error logging in user:", error));
-}
+        // Set user's avatar with the first letter of their name
+        userAvatarElement.textContent = name.charAt(0).toUpperCase();
+      });
+  });
+  
