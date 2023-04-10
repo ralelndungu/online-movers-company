@@ -1,9 +1,9 @@
 <?php
 // Database connection parameters
 $servername = "localhost";
-$username = "your_db_username";
-$password = "your_db_password";
-$dbname = "your_db_name";
+$username = "root";
+$password = "Moha1234";
+$dbname = "online_movers";
 
 // Create a new connection to the database
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,6 +13,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } else {
     echo "Successfully connected to the database";
+}
+if (!extension_loaded('mysqli')) {
+    dl('php_mysqli.dll');
 }
 
 // Close the connection

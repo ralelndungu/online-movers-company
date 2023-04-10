@@ -17,7 +17,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         if (password_verify($password, $row['password'])) {
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['user_name'] = $row['name'];
-            header("Location: home.php");
+            $_SESSION['message'] = "Login successful! Welcome to the home page.";
+            header("Location: home.html");
             exit();
         } else {
             $error = "Invalid email or password";
@@ -27,3 +28,4 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     }
 }
 ?>
+ALTER TABLE users MODIFY id INT AUTO_INCREMENT PRIMARY KEY;
