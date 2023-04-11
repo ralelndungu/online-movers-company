@@ -20,11 +20,21 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
+        
         <div class="auth-buttons">
           <button id="loginBtn" onclick="redirectToLogin()">Log in</button>
           <button id="signupBtn" onclick="redirectToSignup()">Sign up</button>
-          <div id="user-avatar" class="hidden"></div>
+          <div id="user-avatar-container" class="hidden">
+            <img id="user-avatar" onclick="toggleDropdownMenu()">
+            <div id="dropdown-menu" class="dropdown-menu hidden">
+              <a href="profile.html">My Profile</a>
+              <a href="bookings.html">Bookings</a>
+              <a href="logout.php">Logout</a>
+            </div>
+          </div>
         </div>
+        
+      </div>
       </div>
     </header>
     <main>

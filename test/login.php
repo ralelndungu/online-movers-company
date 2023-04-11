@@ -13,19 +13,18 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        if (password_verify($password, $row['password'])) {
-            $_SESSION['user_id'] = $row['id'];
-            $_SESSION['user_name'] = $row['name'];
-            $_SESSION['message'] = "Login successful! Welcome to the home page.";
-            header("Location: home.html");
+        $user = $result->fetch_assoc();
+
+        if (password_verify($password, $user['password'])) {
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user_name'] = $user['name']; 
+            header("Location: home.php");
             exit();
         } else {
-            $error = "Invalid email or password";
+            $error = "Incorrect email or password";
         }
     } else {
-        $error = "Invalid email or password";
+        $error = "Incorrect email or password";
     }
 }
 ?>
-ALTER TABLE users MODIFY id INT AUTO_INCREMENT PRIMARY KEY;

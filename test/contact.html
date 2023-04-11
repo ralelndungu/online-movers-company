@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Masterbest Movers Company</title>
+    <title>Book Masterbest Movers Company</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -30,18 +30,41 @@
     </header>
   
 
-    <!-- Contact -->
+    <!-- Booking -->
     <main>
-      <section class="contact-section">
-          <h2>Contact Us</h2>
-          <form id="contact-form">
+      <section class="booking-section">
+          <h2>Book Your Move</h2>
+          <form id="booking-form">
               <label for="name">Name:</label>
               <input type="text" id="name" name="name" required>
+              
               <label for="email">Email:</label>
               <input type="email" id="email" name="email" required>
-              <label for="message">Message:</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-              <button type="submit">Submit</button>
+              
+              <label for="phone">Phone:</label>
+              <input type="tel" id="phone" name="phone" required>
+              
+              <label for="moving-date">Moving Date:</label>
+              <input type="date" id="moving-date" name="moving-date" required>
+              
+              <label for="service">Service Type:</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option value="household">Household Moving</option>
+                <option value="office">Office Moving</option>
+                <option value="staff">Staff Relocations</option>
+              </select>
+              
+              <label for="from-address">From Address:</label>
+              <input type="text" id="from-address" name="from-address" required>
+              
+              <label for="to-address">To Address:</label>
+              <input type="text" id="to-address" name="to-address" required>
+              
+              <label for="message">Additional Information:</label>
+              <textarea id="message" name="message" rows="5"></textarea>
+              
+              <button type="submit">Submit Booking</button>
           </form>
       </section>
   </main>

@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="signup-box">
-    <a href="home.html" class="back-arrow">&#8592;</a>
+    <a href="index.html" class="back-arrow">&#8592;</a>
     <h2>Sign Up</h2>
     <form action="signup.php" method="POST">
         <label for="name">Name:</label>
@@ -20,7 +20,11 @@
         <label for="confirm_password">Confirm Password:</label>
         <input type="password" id="confirm_password" name="confirm_password" required>
       
-      <button type="submit">Sign Up</button>
+        <?php if (isset($error)): ?>
+          <p class="error"><?php echo htmlspecialchars($error); ?></p>
+        <?php endif; ?>
+        
+        <button type="submit">Sign Up</button>
     </form>
     <p>Already have an account? <a href="login.html">Login</a></p>
   </div>

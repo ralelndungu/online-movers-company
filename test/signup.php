@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 require_once 'config.php';
 
@@ -18,7 +19,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])
 
         if ($stmt->affected_rows > 0) {
             $_SESSION['message'] = "Registration successful! Please log in.";
-            header("Location: login.php");
+            header("Location: home.php");
             exit();
         } else {
             $error = "An error occurred while registering. Please try again.";
